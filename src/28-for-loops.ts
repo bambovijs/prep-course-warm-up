@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Psst! Want a hint? Try using a for loop for this exercise.
@@ -9,7 +9,23 @@ export {};
  *  - https://www.youtube.com/watch?v=Kn06785pkJg (JavaScript Loops Made Easy)
 */
 
-function goThroughNumbers(start, end) {}
+function goThroughNumbers(start: number, end: number) {
+    if (start < end) {
+        for (let i = start; i <= end; i++) {
+            const number = i;
+
+            if (number % 2 !== 0) {
+                console.log(`${number} - odd`);
+            }
+            else {
+                console.log(`${number} - even`);
+            }
+        }
+    }
+    else {
+        console.log('invalid input');
+    }
+}
 
 goThroughNumbers(3, 7);
 /* Expected output:

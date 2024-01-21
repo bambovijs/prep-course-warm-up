@@ -10,11 +10,25 @@ export {};
  *  - https://www.youtube.com/watch?v=Pi3QC_fVaD0 (JavaScript this Keyword Explained In 3 Minutes)
  *  - https://www.youtube.com/watch?v=YOlr79NaAtQ (What is THIS in JavaScript? in 100 seconds)
  */
+const PI: number = 3.14;
 
-function Circle(radius) {
-  this.radius = radius;
-  this.area = function() {};
-  this.perimeter = function() {};
+class Circle {
+  radius: number;
+
+  constructor(radius: number){
+    this.radius = radius;
+  }
+
+  area(): number{
+    const result = PI * (this.radius * this.radius);
+    return +result.toFixed(2);
+  }
+
+  perimeter(): number{
+    const result = PI * 2 * this.radius;
+    return +result.toFixed(2);
+  }
+
 }
 
 const c = new Circle(3);

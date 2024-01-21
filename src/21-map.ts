@@ -1,6 +1,6 @@
-export {};
+export { };
 
-function tidyUpString(str) {
+function tidyUpString(str: string): string {
   return str
     .trim()
     .toLowerCase()
@@ -8,9 +8,11 @@ function tidyUpString(str) {
 }
 
 // You are allowed to edit this function
-function capitalise(str) {}
+function capitalise(str: string): string {
+  return str[0].toUpperCase() + str.substring(1);
+}
 
 const mentors = ["/Daniel ", "irina ", " Gordon", "ashleigh "];
-let mentorsTidy; // You are allowed to edit this line
+let mentorsTidy = mentors.map(mentor => capitalise(tidyUpString(mentor))); // You are allowed to edit this line
 
 console.log(mentorsTidy); // Expected output: ["Daniel", "Irina", "Gordon", "Ashleigh"]

@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * So far you've been working with numeric and textual data using JS data types - numbers
@@ -8,4 +8,19 @@ export {};
  *  - https://javascript.info/array
  */
 
-console.log(stringToArray(["John Doe"])); // Expected output: ['John', 'Doe']
+function stringToArray(fullNames: string[]): string[] {
+    const result: string[] = [];
+
+    for (let i = 0; i < fullNames.length; i++) {
+        const seperateNames = fullNames[i].split(' ');
+
+        for (let j = 0; j < seperateNames.length; j++) {
+            const element = seperateNames[j].split('');
+            result.push(seperateNames[j]);
+        }
+    }
+    return result;
+}
+
+
+console.log(stringToArray(["John Doe", "Ra Ba", "Peteris Janis"])); // Expected output: ['John', 'Doe']

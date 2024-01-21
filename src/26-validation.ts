@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Complete the function to check if passed argument satisfies the following:
@@ -11,7 +11,23 @@ export {};
 const excludedNums = [6, 14, 91, 111];
 
 // You are allowed to edit only this function
-function validate(num) {}
+function validate(num: number | string): boolean {
+  //parbaudam vai parametra tips nav string
+  if (typeof num === 'string') {
+    return false;
+  }
+  //parbaudam vai tas ir ints
+  else if (!Number.isInteger(num)) {
+    return false;
+  }
+  //vai skaitlis neietilpst masiivaa
+  else if (excludedNums.includes(num)) {
+    return false;
+  }
+
+  //Ja visi izpildas tad
+  return true;
+}
 
 console.log(validate(6));
 console.log(validate(10.5));

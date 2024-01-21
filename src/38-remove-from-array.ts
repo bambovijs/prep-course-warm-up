@@ -1,6 +1,9 @@
 export {};
 
-const removeFromArray = function() {};
+function removeFromArray<T>(arr: T[], ...valuesToRemove: T[]): T[] {
+    // Create a new array using the filter method
+    return arr.filter(item => !valuesToRemove.includes(item));
+  }
 
 console.log(removeFromArray([1, 2, 3, 4], 3)); // Expected output: [1, 2, 4]
 console.log(removeFromArray([1, 2, 3, 4], 7)); // Expected output: [1, 2, 3, 4]

@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Implement map function which works similarly as
@@ -8,10 +8,17 @@ export {};
  * and recreate the logic yourself.
  */
 
-const map = () => {};
+const myMap = (numbers: number[], numberX:(number: number)=> number) => {
+  //for loops
+  for (let i = 0; i < numbers.length; i++) {
+    numbers[i] = numberX(numbers[i]);
+  }
+
+  return numbers;
+};
 
 const numbers = [1, 2, 3];
-const doubled = map(numbers, function(number) {
+const doubled = myMap(numbers, function (number) {
   return number * 2;
 });
 console.log(doubled); // Expected result: [2, 4, 6]

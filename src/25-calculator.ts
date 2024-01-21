@@ -1,14 +1,35 @@
-export {};
+export { };
 
-function add() {}
+function add(x: number, y: number): number {
+    return x + y;
+}
 
-function subtract() {}
+function subtract(x: number, y: number): number {
+    return x - y;
+}
 
-function sum() {}
+function sum(arr: number[]): number {
+    let num = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        num += element
+    }
+    return num;
+}
 
-function multiply() {}
+function multiply(arr: number[]): number {
+    var result = 1;
+    for (let i = 0; i < arr.length; i++) {
+        result *= arr[i];
+    }
 
-function power() {}
+    return result;
+}
+
+function power(x: number, y: number): number {
+    //Nezinu vai var izmantot Math. metodes
+    return Math.pow(x, y);
+}
 
 console.log(add(1, 2)); // Expected output: 3
 console.log(subtract(1, 2)); // Expected output: -1

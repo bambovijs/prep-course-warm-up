@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Loop over the array and for each alive writer print out the following:
@@ -35,3 +35,17 @@ const writers = [
     alive: true
   }
 ];
+// For loops
+for (let i = 0; i < writers.length; i++) {
+  const element = writers[i];
+
+  if (element.alive) {
+    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`)
+  }
+}
+
+//Arrow function ar map, bet izvada masīvu ar elementiem.
+let result = writers
+  .filter(writer => writer.alive === true)
+  .map(writer => `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`);
+console.log(result);

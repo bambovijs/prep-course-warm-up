@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Ah, objects...
@@ -9,7 +9,11 @@ export {};
  *  - https://www.w3schools.com/js/js_objects.asp
  */
 
-const books = [
+interface I_Book {
+  title: string, author: string
+}
+
+const books: I_Book[] = [
   {
     title: "4 hour work week",
     author: "Tim Ferris"
@@ -20,6 +24,8 @@ const books = [
   }
 ];
 
-const getTheTitles = () => {};
+const getTheTitles = (books: I_Book[]): string[] => {
+  return books.map(book => book.title);
+};
 
 console.log(getTheTitles(books)); // Expected output: ['4 hour work week', 'Tools of Titans']
